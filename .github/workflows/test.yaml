@@ -1,0 +1,21 @@
+---
+name: Test
+on: workflow_dispatch
+jobs:
+  foo:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo hello
+  bar:
+    runs-on: ubuntu-latest
+    if: "false"
+    steps:
+      - run: echo bar
+  zoo:
+    runs-on: ubuntu-latest
+    if: success()
+    needs:
+      - foo
+      - bar
+    steps:
+      - run: echo hello

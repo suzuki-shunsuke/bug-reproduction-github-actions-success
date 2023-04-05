@@ -13,7 +13,6 @@ jobs:
       - run: echo bar
   zoo:
     runs-on: ubuntu-latest
-    if: success()
     needs:
       - foo
       - bar

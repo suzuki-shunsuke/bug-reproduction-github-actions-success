@@ -3,15 +3,18 @@ name: Test
 on: workflow_dispatch
 jobs:
   foo:
+    timeout-minutes: 30
     runs-on: ubuntu-latest
     steps:
       - run: echo hello
   bar:
+    timeout-minutes: 30
     runs-on: ubuntu-latest
     if: "false"
     steps:
       - run: echo bar
   zoo:
+    timeout-minutes: 30
     runs-on: ubuntu-latest
     if: success()
     needs:

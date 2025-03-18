@@ -16,7 +16,6 @@ jobs:
   zoo:
     timeout-minutes: 30
     runs-on: ubuntu-latest
-    if: success()
     needs:
       - foo
       - bar
